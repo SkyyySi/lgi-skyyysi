@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  format:
+    uses: "JohnnyMorganz/stylua-action@v3.0.0"
+    name: "StyLua"
+    with:
+      args: "--indent-type=Tabs --quote-style=ForceDouble --call-parentheses=NoSingleTable --collapse-simple-statement=Never --column-width=999999"
