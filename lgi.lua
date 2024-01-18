@@ -16,4 +16,4 @@
 -- 2) Upgrading older installations (<0.2), where lgi.lua was the only
 --    installed file, it would take precedence over 'lgi/init.lua'.
 
-return require 'lgi.init'
+return require("lgi.init")

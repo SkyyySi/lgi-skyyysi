@@ -5,10 +5,10 @@
 -- http://live.gnome.org/Vala/MxSample
 --
 
-local lgi = require('lgi')
+local lgi = require("lgi")
 local GObject = lgi.GObject
-local Mx = lgi.require('Mx', '1.0')
-local Clutter = lgi.require('Clutter', '1.0')
+local Mx = lgi.require("Mx", "1.0")
+local Clutter = lgi.require("Clutter", "1.0")
 
 local app = Mx.Application { application_name = "MX Widget Factory" }
 local window = app:create_window()
@@ -18,19 +18,20 @@ local hbox = Mx.BoxLayout()
 window.toolbar:add_actor(hbox)
 
 local button = Mx.Button {
-   label = "Click me",
-   tooltip_text = "Please click this button!",
-   on_clicked = function(self) self.label = "Thank you!" end
+	label = "Click me",
+	tooltip_text = "Please click this button!",
+	on_clicked = function(self)
+		self.label = "Thank you!"
+	end,
 }
 
 local combo = Mx.ComboBox()
-for _, name in ipairs { "Africa", "Antarctica", "Asia", "Australia", "Europe",
-			"North America", "South America" } do
-   combo:append_text(name)
+for _, name in ipairs { "Africa", "Antarctica", "Asia", "Australia", "Europe", "North America", "South America" } do
+	combo:append_text(name)
 end
 combo.index = 0
 function combo.on_notify:index()
-   print(("Selected continent: %s"):format(self.active_text))
+	print(("Selected continent: %s"):format(self.active_text))
 end
 
 hbox:add(button, combo)
@@ -51,11 +52,13 @@ table:add_actor(combo, 0, 2)
 table.meta[entry].y_fill = false
 
 local scrollbar = Mx.ScrollBar {
-   adjustment = Mx.Adjustment {
-      lower = 0, upper = 10,
-      page_increment = 1, page_size = 1
-   },
-   height = 22
+	adjustment = Mx.Adjustment {
+		lower = 0,
+		upper = 10,
+		page_increment = 1,
+		page_size = 1,
+	},
+	height = 22,
 }
 table:add_actor(scrollbar, 1, 0)
 table.meta[entry].y_fill = false
@@ -68,11 +71,13 @@ local slider = Mx.Slider()
 table:add_actor(slider, 1, 2)
 table.meta[slider].y_fill = false
 function slider.on_notify:value()
-   progressbar.progress = slider.value
+	progressbar.progress = slider.value
 end
 
 local pathbar = Mx.PathBar()
-for _, path in ipairs { "", "Path", "Bar" } do pathbar:push(path) end
+for _, path in ipairs { "", "Path", "Bar" } do
+	pathbar:push(path)
+end
 table:add_actor(pathbar, 2, 0)
 
 local expander = Mx.Expander { label = "Expander" }
@@ -89,22 +94,23 @@ table:add_actor(togglebutton, 3, 0)
 table.meta[togglebutton].y_fill = false
 
 local checkbutton = Mx.Button { is_toggle = true }
-checkbutton:set_style_class('check-box')
+checkbutton:set_style_class("check-box")
 table:add_actor(checkbutton, 3, 1)
 table.meta[checkbutton].y_fill = false
 table.meta[checkbutton].x_fill = false
 
 -- Just for fun, create binding between both kinds of toggles.
-togglebutton:bind_property('toggled', checkbutton, 'toggled', 
-			   GObject.BindingFlags.BIDIRECTIONAL)
+togglebutton:bind_property("toggled", checkbutton, "toggled", GObject.BindingFlags.BIDIRECTIONAL)
 
 scrollbar = Mx.ScrollBar {
-   adjustment = Mx.Adjustment {
-      lower = 0, upper = 10,
-      page_increment = 1, page_size = 1,
-   },
-   orientation = Mx.Orientation.VERTICAL,
-   width = 22
+	adjustment = Mx.Adjustment {
+		lower = 0,
+		upper = 10,
+		page_increment = 1,
+		page_size = 1,
+	},
+	orientation = Mx.Orientation.VERTICAL,
+	width = 22,
 }
 table:add_actor(scrollbar, 0, 3)
 table.meta[scrollbar].row_span = 3

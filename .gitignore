@@ -5,3 +5,4 @@
 .depcheck
 *.rockspec
 cairodemo-*.png
+/builddir/

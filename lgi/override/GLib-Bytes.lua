@@ -8,10 +8,9 @@
 --
 ------------------------------------------------------------------------------
 
-local select, type, pairs, tostring, setmetatable, error, assert
-   = select, type, pairs, tostring, setmetatable, error, assert
+local select, type, pairs, tostring, setmetatable, error, assert = select, type, pairs, tostring, setmetatable, error, assert
 
-local lgi = require 'lgi'
+local lgi = require("lgi")
 local GLib = lgi.GLib
 local Bytes = GLib.Bytes
 

@@ -33,66 +33,59 @@ Original copyright follows:
 # DEALINGS IN THE SOFTWARE.
 ]]
 
-local lgi = require 'lgi'
-local Gio = lgi.require 'Gio'
+local lgi = require("lgi")
+local Gio = lgi.require("Gio")
 
 -- main(argv):
-   local argv = {...}
+local argv = { ... }
 
-   local factory = function()
-      return Gio.bus_get_sync(Gio.BusType.SYSTEM)
-   end
+local factory = function()
+	return Gio.bus_get_sync(Gio.BusType.SYSTEM)
+end
 
-   if #argv > 1 then
-        print(help)
-        return -1
-   else
-      if #argv == 1 then
-         if argv[1] == '--session' then
-            factory = function()
-               return Gio.bus_get_sync(Gio.BusType.SESSION)
-            end
-         else
-            if argv[1] ~= '--system' then
-               print(help)
-               return -1
-            end
-         end
-      end
-   end
+if #argv > 1 then
+	print(help)
+	return -1
+else
+	if #argv == 1 then
+		if argv[1] == "--session" then
+			factory = function()
+				return Gio.bus_get_sync(Gio.BusType.SESSION)
+			end
+		else
+			if argv[1] ~= "--system" then
+				print(help)
+				return -1
+			end
+		end
+	end
+end
 
-   -- Get a connection to the system or session bus as appropriate
-   -- We're only using blocking calls, so don't actually need a main loop here
-   local bus = factory()
+-- Get a connection to the system or session bus as appropriate
+-- We're only using blocking calls, so don't actually need a main loop here
+local bus = factory()
 
-   -- This could be done by calling bus.list_names(), but here's
-   -- more or less what that means:
+-- This could be done by calling bus.list_names(), but here's
+-- more or less what that means:
 
-   -- Get a reference to the desktop bus' standard object, denoted
-   -- by the path /org/freedesktop/DBus.
-   -- dbus_object = bus.get_object('org.freedesktop.DBus',
-   --                      '/org/freedesktop/DBus')
+-- Get a reference to the desktop bus' standard object, denoted
+-- by the path /org/freedesktop/DBus.
+-- dbus_object = bus.get_object('org.freedesktop.DBus',
+--                      '/org/freedesktop/DBus')
 
-   -- The object /org/freedesktop/DBus
-   -- implements the 'org.freedesktop.DBus' interface
-   -- dbus_iface = dbus.Interface(dbus_object, 'org.freedesktop.DBus')
+-- The object /org/freedesktop/DBus
+-- implements the 'org.freedesktop.DBus' interface
+-- dbus_iface = dbus.Interface(dbus_object, 'org.freedesktop.DBus')
 
-   -- One of the member functions in the org.freedesktop.DBus interface
-   -- is ListNames(), which provides a list of all the other services
-   -- registered on this bus. Call it, and print the list.
-   -- services = dbus_iface.ListNames()
-   local var, err = bus:call_sync('org.freedesktop.DBus', 
-      '/org/freedesktop/DBus',
-      'org.freedesktop.DBus',
-      'ListNames',
-      nil,
-      nil,
-      Gio.DBusCallFlags.NONE,
-      -1)
-   -- We know that ListNames returns '(as)'
-   local services = var[1].value
+-- One of the member functions in the org.freedesktop.DBus interface
+-- is ListNames(), which provides a list of all the other services
+-- registered on this bus. Call it, and print the list.
+-- services = dbus_iface.ListNames()
+local var, err = bus:call_sync("org.freedesktop.DBus", "/org/freedesktop/DBus", "org.freedesktop.DBus", "ListNames", nil, nil, Gio.DBusCallFlags.NONE, -1)
+-- We know that ListNames returns '(as)'
+local services = var[1].value
 
-   -- services.sort() - is incorrect as GVariant is immutable
-   for i = 1, #services do
-      print (services[i])
-   end
+-- services.sort() - is incorrect as GVariant is immutable
+for i = 1, #services do
+	print(services[i])
+end

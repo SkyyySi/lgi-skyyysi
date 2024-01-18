@@ -14,32 +14,72 @@ local Gtk = lgi.Gtk
 local GLib = lgi.GLib
 
 local width, height = 200, 200
-local surf = cairo.ImageSurface('ARGB32', width, height)
+local surf = cairo.ImageSurface("ARGB32", width, height)
 local cr = cairo.Context(surf)
 local w = Gtk.Window()
 local cairo_move_to = cairo.Context.move_to
 
 for _, test in ipairs {
-   { 100000, function() cr:move_to(100, 100) end },
-   { 100000, function() cairo.Context.move_to(cr, 100, 100) end },
-   { 100000, function() cairo_move_to(cr, 100, 100) end },
-   { 100000, function() cr.line_width = 1 end },
-   { 100000, function() cr:set_line_width(1) end },
-   { 10000, function() w:set_title('title') end },
-   { 10000, function() Gtk.Window.set_title(w, 'title') end },
-   { 10000, function() w.title = 'title' end },
+	{
+		100000,
+		function()
+			cr:move_to(100, 100)
+		end,
+	},
+	{
+		100000,
+		function()
+			cairo.Context.move_to(cr, 100, 100)
+		end,
+	},
+	{
+		100000,
+		function()
+			cairo_move_to(cr, 100, 100)
+		end,
+	},
+	{
+		100000,
+		function()
+			cr.line_width = 1
+		end,
+	},
+	{
+		100000,
+		function()
+			cr:set_line_width(1)
+		end,
+	},
+	{
+		10000,
+		function()
+			w:set_title("title")
+		end,
+	},
+	{
+		10000,
+		function()
+			Gtk.Window.set_title(w, "title")
+		end,
+	},
+	{
+		10000,
+		function()
+			w.title = "title"
+		end,
+	},
 } do
-   local results = {}
-   local timer = GLib.Timer()
-   for i = 1, test[1] do
-      test[2]()
-   end
-   timer:stop()
-   io.write(string.format('%0.2f', timer:elapsed()))
-   io.write('\t')
-   io.flush()
+	local results = {}
+	local timer = GLib.Timer()
+	for i = 1, test[1] do
+		test[2]()
+	end
+	timer:stop()
+	io.write(string.format("%0.2f", timer:elapsed()))
+	io.write("\t")
+	io.flush()
 end
-print('\n')
+print("\n")
 
 --[[
 *** 0.7.2:

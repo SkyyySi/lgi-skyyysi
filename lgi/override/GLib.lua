@@ -9,7 +9,7 @@
 ------------------------------------------------------------------------------
 
 local select, type, pairs = select, type, pairs
-local core = require 'lgi.core'
+local core = require("lgi.core")
 local GLib = core.repo.GLib
 
 GLib._constant = GLib._constant or {}
