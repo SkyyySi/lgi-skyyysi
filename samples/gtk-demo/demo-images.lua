@@ -158,9 +158,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Images", 
-table.concat {
+end, "Images", table.concat {
 	[[Gtk.Image is used to display an image; the image can be in ]],
 	[[a number of formats. Typically, you load an image into a Gdk.Pixbuf, ]],
 	[[then display the pixbuf.

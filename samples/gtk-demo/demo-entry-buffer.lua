@@ -32,8 +32,6 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Entry/Entry Buffer", 
-table.concat {
+end, "Entry/Entry Buffer", table.concat {
 	"Gtk.EntryBuffer provides the text content in a Gtk.Entry.",
 }

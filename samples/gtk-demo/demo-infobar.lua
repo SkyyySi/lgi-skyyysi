@@ -71,8 +71,6 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Info bar", 
-table.concat {
+end, "Info bar", table.concat {
 	[[Info bar widgets are used to report important messages to the user.]],
 }

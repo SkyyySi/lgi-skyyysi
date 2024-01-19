@@ -78,9 +78,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Menus", 
-table.concat {
+end, "Menus", table.concat {
 	[[There are several widgets involved in displaying menus. ]],
 	[[The Gtk.MenuBar widget is a menu bar, which normally appears ]],
 	[[horizontally at the top of an application, but can also be ]],

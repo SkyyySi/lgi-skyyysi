@@ -71,9 +71,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Color Selector", 
-table.concat {
+end, "Color Selector", table.concat {
 	[[Gtk.ColorSelection lets the user choose a color. ]],
 	[[Gtk.ColorSelectionDialog is a prebuilt dialog containing ]],
 	[[a Gtk.ColorSelection.]],

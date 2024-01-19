@@ -93,9 +93,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Pixbufs", 
-table.concat {
+end, "Pixbufs", table.concat {
 	[[A Gdk.Pixbuf represents an image, normally in RGB or RGBA format. ]],
 	[[Pixbufs are normally used to load files from disk and perform image ]],
 	[[scaling.

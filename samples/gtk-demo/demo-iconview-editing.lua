@@ -58,9 +58,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Icon View/Editing and Drag-and-Drop", 
-table.concat {
+end, "Icon View/Editing and Drag-and-Drop", table.concat {
 	[[The Gtk.IconView widget supports Editing and Drag-and-Drop. ]],
 	[[This example also demonstrates using the generic Gtk.CellLayout ]],
 	[[interface to set up cell renderers in an icon view.]],

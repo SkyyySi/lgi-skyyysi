@@ -23,8 +23,6 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Builder", 
-table.concat {
+end, "Builder", table.concat {
 	[[Demonstrates an interface loaded from a XML description.]],
 }

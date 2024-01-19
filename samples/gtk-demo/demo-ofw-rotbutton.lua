@@ -296,9 +296,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Offscreen windows/Rotated button", 
-table.concat {
+end, "Offscreen windows/Rotated button", table.concat {
 	[[Offscreen windows can be used to transform parts or a ]],
 	[[widget hierarchy. Note that the rotated button is fully functional.]],
 }

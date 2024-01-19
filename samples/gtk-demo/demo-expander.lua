@@ -30,9 +30,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Expander", 
-table.concat {
+end, "Expander", table.concat {
 	[[Gtk.Expander allows to provide additional content that is ]],
 	[[initially hidden. This is also known as "disclosure triangle".]],
 }

@@ -155,9 +155,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Icon View/Icon View Basics", 
-table.concat {
+end, "Icon View/Icon View Basics", table.concat {
 	[[The Gtk.IconView widget is used to display and manipulate icons. ]],
 	[[It uses a Gtk.TreeModel for data storage, so the list store example ]],
 	[[might be helpful.]],

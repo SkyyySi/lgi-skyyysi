@@ -37,9 +37,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Entry/Entry Completion", 
-table.concat {
+end, "Entry/Entry Completion", table.concat {
 	"Gtk.EntryCompletion provides a mechanism for adding support for ",
 	"completion in Gtk.Entry.",
 }

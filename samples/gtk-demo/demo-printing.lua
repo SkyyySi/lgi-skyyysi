@@ -109,9 +109,7 @@ return function(parent, dir)
 		}
 		dialog:show_all()
 	end
-end, 
-"Printing", 
-table.concat {
+end, "Printing", table.concat {
 	[[Gtk.PrintOperation offers a simple API to support printing ]],
 	[[in a cross-platform way.]],
 }

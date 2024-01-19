@@ -151,9 +151,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Tree View/List Store", 
-table.concat {
+end, "Tree View/List Store", table.concat {
 	[[The Gtk.ListStore is used to store data in list form, to be used later ]],
 	[[on by a Gtk.TreeView to display it. This demo builds a simple ]],
 	[[Gtk.ListStore and displays it. See the Stock Browser demo for a more ]],

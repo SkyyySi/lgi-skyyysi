@@ -87,9 +87,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Text Widget/Automatic scrolling", 
-table.concat {
+end, "Text Widget/Automatic scrolling", table.concat {
 	[[This example demonstrates how to use the gravity of Gtk.TextMarks ]],
 	[[to keep a text view scrolled to the bottom when appending text.]],
 }

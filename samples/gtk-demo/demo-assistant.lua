@@ -80,9 +80,7 @@ return function(parent, dir)
 	--assistant:set_screen(parent:get_screen())
 	assistant:show_all()
 	return assistant
-end, 
-"Assistant", 
-table.concat {
+end, "Assistant", table.concat {
 	"Demonstrates a sample multi-step assistant.\n",
 	"Assistants are used to divide an operation into several simpler ",
 	"sequential steps, and to guide the user through these steps.",

@@ -158,8 +158,6 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Dialog and Message Boxes", 
-table.concat {
+end, "Dialog and Message Boxes", table.concat {
 	"Dialog widgets are used to pop up a transient window for user feedback.",
 }

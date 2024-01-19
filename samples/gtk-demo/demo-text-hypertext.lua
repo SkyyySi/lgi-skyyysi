@@ -34,12 +34,12 @@ A tag is an attribute that can be applied to some range of text. For example, a 
 
 	local active_links
 	local handlers = {
-		["^([^%[%*]+)"] = 		-- Plaintext.
-function(text)
+		-- Plaintext.
+		["^([^%[%*]+)"] = function(text)
 			return text
 		end,
-		["^%[(%w+) ([^%]]+)%]"] = 		-- Link.
-function(link, text)
+		-- Link.
+		["^%[(%w+) ([^%]]+)%]"] = function(link, text)
 			local tag = Gtk.TextTag {
 				foreground = "blue",
 				underline = Pango.Underline.SINGLE,
@@ -47,8 +47,8 @@ function(link, text)
 			active_links[tag] = link
 			return text, tag
 		end,
-		["^%*([^%*]+)%*"] = 		-- Bold text.
-function(text)
+		-- Bold text.
+		["^%*([^%*]+)%*"] = function(text)
 			return text, Gtk.TextTag {
 				weight = Pango.Weight.BOLD,
 			}
@@ -155,9 +155,7 @@ function(text)
 
 	window:show_all()
 	return window
-end, 
-"Text Widget/Hypertext", 
-table.concat {
+end, "Text Widget/Hypertext", table.concat {
 	[[Usually, tags modify the appearance of text in the view, ]],
 	[[e.g. making it bold or colored or underlined. But tags are not ]],
 	[[restricted to appearance. They can also affect the behavior of ]],

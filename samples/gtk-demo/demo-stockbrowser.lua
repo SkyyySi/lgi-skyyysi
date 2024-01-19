@@ -200,9 +200,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Stock Item and Icon Browser", 
-table.concat {
+end, "Stock Item and Icon Browser", table.concat {
 	[[This source code for this demo doesn't demonstrate anything ]],
 	[[particularly useful in applications. The purpose of the "demo" ]],
 	[[is just to provide a handy place to browse the available stock ]],

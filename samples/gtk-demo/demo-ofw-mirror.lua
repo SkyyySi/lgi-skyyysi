@@ -266,9 +266,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Offscreen windows/Effects", 
-table.concat {
+end, "Offscreen windows/Effects", table.concat {
 	[[Offscreen windows can be used to render elements multiple times ]],
 	[[to achieve various effects.]],
 }

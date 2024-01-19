@@ -98,9 +98,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Pickers", 
-table.concat {
+end, "Pickers", table.concat {
 	[[These widgets are mainly intended for use in preference ]],
 	[[dialogs. They allow to select colors, fonts, files, directories ]],
 	[[and applications.]],

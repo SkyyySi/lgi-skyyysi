@@ -162,9 +162,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Paned Widgets", 
-table.concat {
+end, "Paned Widgets", table.concat {
 	[[The Gtk.Paned widget divide its content area into two panes ]],
 	[[with a divider in between that the user can adjust. A separate ]],
 	[[child is placed into each pane.

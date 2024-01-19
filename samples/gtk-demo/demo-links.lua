@@ -34,9 +34,7 @@ or activated via <a href="keynav">keynav</a>]],
 
 	window:show_all()
 	return window
-end, 
-"Links", 
-table.concat {
+end, "Links", table.concat {
 	[[Gtk.Label can show hyperlinks. The default action is to call ]],
 	[[Gtk.show_uri() on their URI, but it is possible to override ]],
 	[[this with a custom handler.]],

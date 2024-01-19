@@ -178,9 +178,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Tree View/Tree Store", 
-table.concat {
+end, "Tree View/Tree Store", table.concat {
 	[[The Gtk.TreeStore is used to store data in tree form, to be used later ]],
 	[[on by a Gtk.TreeView to display it. This demo builds a simple ]],
 	[[Gtk.TreeStore and displays it. If you're new to the Gtk.TreeView ]],

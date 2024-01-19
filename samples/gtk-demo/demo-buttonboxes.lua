@@ -49,6 +49,4 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Button Boxes", 
-"The Button Box widgets are used to arrange buttons with padding."
+end, "Button Boxes", "The Button Box widgets are used to arrange buttons with padding."

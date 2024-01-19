@@ -143,9 +143,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Clipboard", 
-table.concat {
+end, "Clipboard", table.concat {
 	"Gtk.Clipboard is used for clipboard handling. This demo shows how to ",
 	"copy and paste text to and from the clipboard.\n",
 	"It also shows how to transfer images via the clipboard or via ",

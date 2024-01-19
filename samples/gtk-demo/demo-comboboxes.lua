@@ -176,9 +176,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Combo boxes", 
-table.concat {
+end, "Combo boxes", table.concat {
 	"The ComboBox widget allows to select one option out of a list. ",
 	"The ComboBoxEntry additionally allows the user to enter a value ",
 	"that is not in the list of options.\n",

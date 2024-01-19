@@ -167,9 +167,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Tree View/Editable Cells", 
-table.concat {
+end, "Tree View/Editable Cells", table.concat {
 	[[This demo demonstrates the use of editable cells in a Gtk.TreeView. ]],
 	[[If you're new to the Gtk.TreeView widgets and associates, look into ]],
 	[[the Gtk.ListStore example first. It also shows how to use ]],

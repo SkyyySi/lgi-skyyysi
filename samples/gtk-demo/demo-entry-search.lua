@@ -181,9 +181,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Entry/Search Entry", 
-table.concat {
+end, "Entry/Search Entry", table.concat {
 	"Gtk.Entry allows to display icons and progress information. ",
 	"This demo shows how to use these features in a search entry.",
 }

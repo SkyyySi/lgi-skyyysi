@@ -317,9 +317,7 @@ This demo does not demonstrate all the Gtk.TextBuffer features; it leaves out, f
 
 	window:show_all()
 	return window
-end, 
-"Text Widget/Multiple Views", 
-table.concat {
+end, "Text Widget/Multiple Views", table.concat {
 	[[The Gtk.TextView widget displays a Gtk.TextBuffer. One ]],
 	[[Gtk.TextBuffer can be displayed by multiple Gtk.TextViews. ]],
 	[[This demo has two views displaying a single buffer, and shows off ]],

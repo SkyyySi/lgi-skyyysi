@@ -59,8 +59,6 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Spinner", 
-table.concat {
+end, "Spinner", table.concat {
 	[[Gtk.Spinner allows to show that background activity is on-going.]],
 }

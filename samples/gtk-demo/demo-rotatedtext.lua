@@ -121,9 +121,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Rotated Text", 
-table.concat {
+end, "Rotated Text", table.concat {
 	[[This demo shows how to use PangoCairo to draw rotated and transformed ]],
 	[[text.  The right pane shows a rotated Gtk.Label widget.
 ]],

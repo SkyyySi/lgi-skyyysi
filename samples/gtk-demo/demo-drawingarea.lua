@@ -136,9 +136,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Drawing Area", 
-table.concat {
+end, "Drawing Area", table.concat {
 	[[Gtk.DrawingArea is a blank area where you can draw custom displays ]],
 	[[of various kinds.
 ]],

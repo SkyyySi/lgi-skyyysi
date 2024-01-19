@@ -276,9 +276,7 @@ return function(parent, dir)
 
 	window:show_all()
 	return window
-end, 
-"Change Display", 
-table.concat {
+end, "Change Display", table.concat {
 	[[Demonstrates migrating a window between different displays ]],
 	[[and screens. A display is a mouse and keyboard with some number ]],
 	[[of associated monitors. A screen is a set of monitors grouped ]],

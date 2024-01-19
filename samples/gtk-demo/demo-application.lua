@@ -226,6 +226,4 @@ return function(parent, dir)
 	window:show_all()
 	window.child.view:grab_focus()
 	return window
-end, 
-"Application main window", 
-[[Demonstrates a typical application window with menubar, toolbar, statusbar.]]
+end, "Application main window", [[Demonstrates a typical application window with menubar, toolbar, statusbar.]]
